@@ -1,5 +1,5 @@
 import pytest
-from script import read_text_file, count_specific_word, identify_most_common_word
+import script
 
 
 def test_read_text_file(tmp_path):
@@ -10,18 +10,18 @@ def test_read_text_file(tmp_path):
     p.write_text("Hello, World!")
 
     # Test the read_text_file function
-    assert read_text_file(str(p)) == "Hello, World!"
+    assert script.read_text_file(str(p)) == "Hello, World!"
 
 
 def test_count_specific_word():
     text = "This is a test. This is only a test."
     word = "test"
-    assert count_specific_word(text, word) == 2
+    assert script.count_specific_word(text, word) == 2
 
 
 def test_identify_most_common_word():
     text = "This is a test. This is only a test."
-    assert identify_most_common_word(text) == "this"
+    assert script.identify_most_common_word(text) == "this"
 
 
 @pytest.mark.parametrize(
@@ -33,4 +33,4 @@ def test_identify_most_common_word():
     ],
 )
 def test_identify_most_common_word(text, expected):
-    assert identify_most_common_word(text) == expected
+    assert script.identify_most_common_word(text) == expected
