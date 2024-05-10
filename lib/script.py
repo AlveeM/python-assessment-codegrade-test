@@ -23,8 +23,12 @@ def identify_most_common_word(text):
 
 
 def calculate_average_word_length(text):
+    if len(text) == 0:
+        return 0
+
     words = re.findall(r"\b\w+\b", text)
     total_length = sum(len(word) for word in words)
+    print(total_length)
     average_length = total_length / len(words)
     return average_length
 
@@ -35,6 +39,9 @@ def count_paragraphs(text):
 
 
 def count_sentences(text):
+    if len(text) == 0:
+        return 0
+
     sentences = re.split(r"(?<=[.!?]) +", text)
     return len(sentences)
 

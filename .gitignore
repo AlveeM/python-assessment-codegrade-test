@@ -59,6 +59,7 @@ package-lock.json
 # pytest cache
 .pytest_cache
 __pycache__
+**/__pycache__/
 
 # database
 *.db
